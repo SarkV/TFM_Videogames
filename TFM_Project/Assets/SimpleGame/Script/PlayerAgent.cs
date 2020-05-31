@@ -10,16 +10,7 @@ public enum Action
     JUMP,
     ROLL,
     ATTACK,
-    LEFT,
-    RIGHT,
     FALL,
-}
-
-public enum Obstacles
-{
-    NORMAL,
-    NON_DODGE,
-    BREAKABLE
 }
 
 public class PlayerAgent : Agent
@@ -37,13 +28,6 @@ public class PlayerAgent : Agent
         { Action.JUMP, "JumpTrigger" },
         { Action.ROLL, "RollTrigger" },
         { Action.ATTACK, "AttackTrigger" }
-    };
-
-    static Dictionary<Obstacles, string> _obstacles = new Dictionary<Obstacles, string>
-    {
-        { Obstacles.NORMAL, "obstacle" },
-        { Obstacles.NON_DODGE, "nonDodgeObstacle" },
-        { Obstacles.BREAKABLE, "breakableObstacle" }
     };
 
 
@@ -66,60 +50,59 @@ public class PlayerAgent : Agent
 
     public override void OnActionReceived(float[] vectorAction)
     {
-        if (vectorAction[0] == 1)
+
+        if (_currentAction == Action.RUN)
         {
-            // Move Left
-            if (_position > -1)
+            if (vectorAction[0] == 1)
             {
-                _position--;
-                this.transform.Translate(Vector3.left * _railPosition);
-            }
-            else
-            {
-                AddReward(-1);
-            }
-        }
-        else if (vectorAction[0] == 2)
-        {
-            // Move Right
-            if (_position < 1)
-            {
-                _position++;
-                this.transform.Translate(Vector3.right * _railPosition);
-            }
-            else
-            {
-                AddReward(-1);
-            }
-        }
-        else if (vectorAction[0] != 0)
-        {
-            if (_currentAction == Action.RUN)
-            {
-                if (vectorAction[0] == 3)
+                // Move Left
+                if (_position > -1)
                 {
-                    _currentAction = Action.JUMP;
-                    _rigidbody.velocity = _rigidbody.velocity + (Vector3.up * 6f);
-                    _animator.SetBool(_triggers[Action.FALL], false);
-                    _animator.SetTrigger(_triggers[Action.JUMP]);
+                    _position--;
+                    this.transform.Translate(Vector3.left * _railPosition);
                 }
-                else if (vectorAction[0] == 4)
+                else
                 {
-                    _currentAction = Action.ROLL;
-                    _animator.SetTrigger(_triggers[Action.ROLL]);
-                }
-                else if (vectorAction[0] == 5)
-                {
-                    _currentAction = Action.ATTACK;
-                    _animator.SetTrigger(_triggers[Action.ATTACK]);
+                    AddReward(-.5f);
                 }
             }
-            else
+            else if (vectorAction[0] == 2)
             {
-                AddReward(-1);
+                // Move Right
+                if (_position < 1)
+                {
+                    _position++;
+                    this.transform.Translate(Vector3.right * _railPosition);
+                }
+                else
+                {
+                    AddReward(-.5f);
+                }
             }
+            else if (vectorAction[0] == 3)
+            {
+                _currentAction = Action.JUMP;
+                _rigidbody.velocity = _rigidbody.velocity + (Vector3.up * 6f);
+                _animator.SetBool(_triggers[Action.FALL], false);
+                _animator.SetTrigger(_triggers[Action.JUMP]);
+            }
+            else if (vectorAction[0] == 4)
+            {
+                _currentAction = Action.ROLL;
+                _animator.SetTrigger(_triggers[Action.ROLL]);
+            }
+            else if (vectorAction[0] == 5)
+            {
+                _currentAction = Action.ATTACK;
+                _animator.SetTrigger(_triggers[Action.ATTACK]);
+            }                
         }
-        
+        else if(vectorAction[0] != 0)
+        {
+            AddReward(-.5f);
+        }
+
+        AddReward(_area.obstacleAvoided(_currentAction, _position + 1));
     }
 
     public override void Heuristic(float[] actionsOut)
@@ -153,16 +136,8 @@ public class PlayerAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         float[,] obstacles = _area.getNearerObstacles();
-        sensor.AddObservation(this.transform.position.z);
         sensor.AddObservation(_position);
-        if (_currentAction == Action.FALL)
-        {
-            sensor.AddObservation((int) Action.JUMP / 4);
-        }
-        else
-        {
-            sensor.AddObservation((int)_currentAction / 4);
-        }
+        sensor.AddObservation(((int)_currentAction) / 3f);
         sensor.AddObservation(obstacles[0, 0]);
         sensor.AddObservation(obstacles[0, 1]);
         sensor.AddObservation(obstacles[1, 0]);
@@ -171,47 +146,10 @@ public class PlayerAgent : Agent
         sensor.AddObservation(obstacles[2, 1]);
     }
 
-    /*
-        // Update is called once per frame
-        void Update()
-        {
-            if (_currentAction == Action.RUN)
-            {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    _rigidbody.velocity = _rigidbody.velocity + (Vector3.up * 6f);
-                    _animator.SetBool(_triggers[Action.FALL], false);
-                    _animator.SetTrigger(_triggers[Action.JUMP]);
-                }else if (Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    _animator.SetTrigger(_triggers[Action.ROLL]);
-                }
-                else if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    _animator.SetTrigger(_triggers[Action.ATTACK]);
-                }
-            }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                if (_position > -1)
-                {
-                    _position--;
-                    this.transform.Translate(Vector3.left * _railPosition);
-                }
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                if (_position < 1)
-                {
-                    _position++;
-                    this.transform.Translate(Vector3.right * _railPosition);
-                }
-            }
-        }
-        */
     void Failed()
     {
-        _area.Restart();
+        EndEpisode();
+        //_area.Restart();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -225,15 +163,17 @@ public class PlayerAgent : Agent
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_obstacles[Obstacles.NORMAL].Equals(other.gameObject.tag) || _obstacles[Obstacles.NON_DODGE].Equals(other.gameObject.tag))
+        if ((_area._obstacleType[Obstacles.NORMAL].Equals(other.gameObject.tag) && _currentAction != Action.JUMP) ||
+            (_area._obstacleType[Obstacles.FLYING].Equals(other.gameObject.tag) && _currentAction != Action.ROLL) ||
+            _area._obstacleType[Obstacles.NON_DODGE].Equals(other.gameObject.tag))
         {
             Failed();
         }
-        else if (_obstacles[Obstacles.BREAKABLE].Equals(other.gameObject.tag))
+        else if (_area._obstacleType[Obstacles.BREAKABLE].Equals(other.gameObject.tag))
         {
             if (_currentAction == Action.ATTACK)
             {
-                Destroy(other.gameObject);
+                _area.destroyObstacle(_position + 1);
             }
             else
             {

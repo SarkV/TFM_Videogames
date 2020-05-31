@@ -9,6 +9,7 @@ TagManager:
   - breakableObstacle
   - nonDodgeObstacle
   - area
+  - flyingObstacle
   layers:
   - Default
   - TransparentFX

@@ -2591,7 +2591,7 @@ GameObject:
   - component: {fileID: 5262708466574132715}
   m_Layer: 0
   m_Name: Drone
-  m_TagString: obstacle
+  m_TagString: flyingObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -4,6 +4,14 @@ using UnityEngine;
 using Unity.MLAgents;
 using UnityEditor;
 
+public enum Obstacles
+{
+    NORMAL,
+    FLYING,
+    NON_DODGE,
+    BREAKABLE,
+}
+
 public class SimpleGameArea : MonoBehaviour
 {
     public GameObject _environment;
@@ -11,29 +19,44 @@ public class SimpleGameArea : MonoBehaviour
     public GameObject[] _obstacles;
 
     public List<GameObject> _environmentList;
-    List<GameObject> _obstaclesList;
+    List<GameObject>[] _obstaclesList;
 
     float speed = -14;
     int _railPosition = 6;
 
-    Vector2 nextTime = new Vector2(2f, 6f);
+    public Dictionary<Obstacles, string> _obstacleType = new Dictionary<Obstacles, string>
+    {
+        { Obstacles.NORMAL, "obstacle" },
+        { Obstacles.FLYING, "flyingObstacle" },
+        { Obstacles.NON_DODGE, "nonDodgeObstacle" },
+        { Obstacles.BREAKABLE, "breakableObstacle" }
+    };
+
+    Vector2 nextTime = new Vector2(1.5f, 4f);
 
     // Start is called before the first frame update
     void Start()
     {
-        _obstaclesList = new List<GameObject>();
+        _obstaclesList = new List<GameObject>[3];
+        _obstaclesList[0] = new List<GameObject>();
+        _obstaclesList[1] = new List<GameObject>();
+        _obstaclesList[2] = new List<GameObject>();
+
         Restart();
     }
 
     public void Restart()
     {
         CancelInvoke();
-        while(_obstaclesList.Count > 0)
+        for (int k = 0; k < 3; k++)
         {
-            if(_obstaclesList[0] != null)
+            while (_obstaclesList[k].Count > 0)
             {
-                Destroy(_obstaclesList[0]);
-                _obstaclesList.RemoveAt(0);
+                if (_obstaclesList[k][0] != null)
+                {
+                    Destroy(_obstaclesList[k][0]);
+                }
+                _obstaclesList[k].RemoveAt(0);
             }
         }
         _environmentList[0].transform.position = new Vector3(
@@ -69,11 +92,11 @@ public class SimpleGameArea : MonoBehaviour
     {
         GameObject obstacle = _obstacles[Random.Range(0, _obstacles.Length)];
         int times = 0;
-        if ("breakableObstacle".Equals(obstacle.tag))
+        if (_obstacleType[Obstacles.BREAKABLE].Equals(obstacle.tag))
         {
             times = 3;
         }
-        else if ("nonDodgeObstacle".Equals(obstacle.tag))
+        else if (_obstacleType[Obstacles.NON_DODGE].Equals(obstacle.tag))
         {
             times = Random.Range(1,3);
         }
@@ -83,15 +106,21 @@ public class SimpleGameArea : MonoBehaviour
         }
 
         List<int> positions = new List<int>() {(int) this.transform.position.x - _railPosition, (int)this.transform.position.x, (int)this.transform.position.x + _railPosition };
+        List<int> indexes = new List<int>() { 0,1,2};
+
         while (times > 0)
         {
             int index = Random.Range(0, positions.Count);
             int pos = positions[index];
+            int ind = indexes[index];
             positions.RemoveAt(index);
+            indexes.RemoveAt(index);
             GameObject gm = Instantiate(obstacle, new Vector3(pos, this.transform.position.y, this.transform.position.z + 128), Quaternion.identity);
             gm.transform.rotation = obstacle.transform.rotation;
             gm.transform.position += obstacle.transform.position;
-            _obstaclesList.Add(gm);
+            gm.name = obstacle.name;
+
+            _obstaclesList[ind].Add(gm);
             times--;
         }
 
@@ -123,30 +152,45 @@ public class SimpleGameArea : MonoBehaviour
             _environmentList.Add(gm);
         }
 
-        List<int> removeList = new List<int>();
+        List<KeyValuePair<int, int>> removeList = new List<KeyValuePair<int, int>>();
 
-        for (int i = 0; i < _obstaclesList.Count; i++)
-        {            
-            if (_obstaclesList[i] == null || _obstaclesList[i].transform.position.z < -63)
+        for (int k = 0; k < 3; k++)
+        {
+            for (int i = 0; i < _obstaclesList[k].Count; i++)
             {
-                removeList.Add(i);
-            }
-            else
-            {
-                _obstaclesList[i].transform.Translate(Vector3.back * speed, Space.World);
+                if (_obstaclesList[k][i] == null || _obstaclesList[k][i].transform.position.z < -10)
+                {
+                    removeList.Add(new KeyValuePair<int, int>(k, i));
+                }
+                else
+                {
+                    _obstaclesList[k][i].transform.Translate(Vector3.back * speed, Space.World);
+                    if (_obstaclesList[k][i].transform.position.z < _player.transform.position.z - 5)
+                    {
+                        GameObject gm = _obstaclesList[k][i];
+                        _obstaclesList[k].RemoveAt(i);
+                        _obstaclesList[k].Add(gm);
+                    }
+                }
             }
         }
         if (removeList.Count > 0)
         {
-            for(int i = removeList.Count - 1; i > 0; i--)
+            for(int i = removeList.Count - 1; i >= 0; i--)
             {
-                if (_obstaclesList[removeList[i]] != null)
+                if (_obstaclesList[removeList[i].Key][removeList[i].Value] != null)
                 {
-                    DestroyImmediate(_obstaclesList[removeList[i]]);
+                    DestroyImmediate(_obstaclesList[removeList[i].Key][removeList[i].Value]);
                 }
-                _obstaclesList.RemoveAt(removeList[i]);
+                _obstaclesList[removeList[i].Key].RemoveAt(removeList[i].Value);
             }
         }
+    }
+
+    public void destroyObstacle(int position)
+    {
+        Destroy(_obstaclesList[position][0]);
+        _obstaclesList[position].RemoveAt(0);
     }
 
     float getObstacleType(GameObject gm)
@@ -154,12 +198,12 @@ public class SimpleGameArea : MonoBehaviour
         float result = -1f;
         for (int i = 0; i < _obstacles.Length && result == -1f; i++)
         {
-            if (PrefabUtility.GetPrefabAssetType(gm).Equals(PrefabUtility.GetPrefabAssetType(_obstacles[i])))
+            if (_obstacles[i].name.Equals(gm.name))
             {
                 result = i;
             }
         }
-        return result;
+        return result / _obstacles.Length;
     }
 
     public float[,] getNearerObstacles()
@@ -169,51 +213,76 @@ public class SimpleGameArea : MonoBehaviour
             for (int j = 0; j < 2; j++)
                 result[i, j] = -1f;
 
-        foreach (GameObject gm in _obstacles)
+        for (int i = 0; i < _obstaclesList.Length; i++)
         {
-            if (gm.transform.position.z > _player.transform.position.z)
+            if (_obstaclesList[i].Count > 0)
             {
-                if (gm.transform.position.x == this.transform.position.x - _railPosition)
+                foreach(GameObject gm in _obstaclesList[i])
                 {
-                    if (result[0, 0] == -1 || result[0, 1] > gm.transform.position.z)
+                    if(gm != null)
                     {
-                        result[0, 0] = getObstacleType(gm);
-                        result[0, 1] = gm.transform.position.x;
+                        if (gm.transform.position.z >= _player.transform.position.z-5)
+                        {
+                            result[i, 0] = getObstacleType(gm);
+                            result[i, 1] = gm.transform.position.z;// / 128;
+                            break;
+                        }
                     }
-                }
-                else if (gm.transform.position.x == this.transform.position.x)
-                {
-                    if (result[1, 0] == -1 || result[1, 1] > gm.transform.position.z)
-                    {
-                        result[1, 0] = getObstacleType(gm);
-                        result[1, 1] = gm.transform.position.x;
-                    }
-                }
-                else if (gm.transform.position.x == this.transform.position.x + _railPosition)
-                {
-                    if (result[2, 0] == -1 || result[1, 1] > gm.transform.position.z)
-                    {
-                        result[2, 0] = getObstacleType(gm);
-                        result[2, 1] = gm.transform.position.x;
-                    }
-                }
+
+                }    
 
             }
         }
-        if(result[0,0] != -1)
+        return result;
+    }
+
+    public int obstacleAvoided(Action currentAction, int position)
+    {
+        int[] pass = new int[] { 0, 0, 0 };
+        if (_obstaclesList[position].Count > 0)
         {
-            result[0, 0] = result[0, 0] / _obstacles.Length;
-            result[0, 1] = result[0, 1] / 128;
+            for(int i = 0; i < _obstaclesList.Length; i++)
+            {
+                if (_obstaclesList[i].Count > 0)
+                {
+                    GameObject gm = _obstaclesList[i][0];
+                    if (gm.transform.position.z <= _player.transform.position.z + 7
+                    && gm.transform.position.z >= _player.transform.position.z)
+                    {
+                        bool p = true;
+                        if (_obstacleType[Obstacles.BREAKABLE].Equals(gm.tag))
+                        {
+                            p = currentAction == Action.ATTACK;
+                        }
+                        else if (_obstacleType[Obstacles.NON_DODGE].Equals(gm.tag))
+                        {
+                            p = i != position;
+                        }
+                        else if (_obstacleType[Obstacles.NORMAL].Equals(gm.tag))
+                        {
+                            p = currentAction == Action.JUMP || i != position;
+                           // p = currentAction == Action.JUMP;
+                        }
+                        else if (_obstacleType[Obstacles.FLYING].Equals(gm.tag))
+                        {
+                            p = currentAction == Action.ROLL || i != position;
+                          //  p = currentAction == Action.ROLL;
+                        }
+                        pass[i] = p ? 1 : -1;
+                    }
+                }                
+            }
         }
-        if (result[1, 0] != -1)
+        int result = 0;
+        if(pass[position] != 0)
         {
-            result[1, 0] = result[1, 0] / _obstacles.Length;
-            result[1, 1] = result[1, 1] / 128;
+            result = pass[position];
+        }else if (pass[0] == 0 && pass[1] == 0 && pass[2] == 0)
+        {
+            result = 0;
         }
-        if (result[2, 0] != -1)
-        {
-            result[2, 0] = result[2, 0] / _obstacles.Length;
-            result[2, 1] = result[2, 1] / 128;
+        else {
+            result = 1;
         }
         return result;
     }
