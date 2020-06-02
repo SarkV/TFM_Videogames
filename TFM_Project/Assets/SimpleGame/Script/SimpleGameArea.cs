@@ -102,7 +102,7 @@ public class SimpleGameArea : MonoBehaviour
         }
         else
         {
-            times = Random.Range(1, 4);
+            times =  Random.Range(1, 4);
         }
 
         List<int> positions = new List<int>() {(int) this.transform.position.x - _railPosition, (int)this.transform.position.x, (int)this.transform.position.x + _railPosition };
@@ -200,18 +200,20 @@ public class SimpleGameArea : MonoBehaviour
         {
             if (_obstacles[i].name.Equals(gm.name))
             {
-                result = i;
+                result = i + 1;
             }
         }
-        return result / _obstacles.Length;
+        return result / (_obstacles.Length + 1);
     }
 
     public float[,] getNearerObstacles()
     {
         float[,] result = new float[3,2];
         for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 2; j++)
-                result[i, j] = -1f;
+        {
+            result[i, 0] = 0f;
+            result[i, 1] = -1f;
+        }
 
         for (int i = 0; i < _obstaclesList.Length; i++)
         {
@@ -221,10 +223,13 @@ public class SimpleGameArea : MonoBehaviour
                 {
                     if(gm != null)
                     {
-                        if (gm.transform.position.z >= _player.transform.position.z-5)
+                        if (gm.transform.position.z >= _player.transform.position.z - 5)
                         {
-                            result[i, 0] = getObstacleType(gm);
-                            result[i, 1] = gm.transform.position.z;// / 128;
+                            if(gm.transform.position.z <= _player.transform.position.z + 10)
+                            {
+                                result[i, 0] = getObstacleType(gm);
+                                result[i, 1] = gm.transform.position.z;
+                            }
                             break;
                         }
                     }
@@ -246,8 +251,8 @@ public class SimpleGameArea : MonoBehaviour
                 if (_obstaclesList[i].Count > 0)
                 {
                     GameObject gm = _obstaclesList[i][0];
-                    if (gm.transform.position.z <= _player.transform.position.z + 7
-                    && gm.transform.position.z >= _player.transform.position.z)
+                    if (gm.transform.position.z <= _player.transform.position.z + 10
+                    && gm.transform.position.z >= _player.transform.position.z - 5)
                     {
                         bool p = true;
                         if (_obstacleType[Obstacles.BREAKABLE].Equals(gm.tag))

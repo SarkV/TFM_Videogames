@@ -107,7 +107,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
   m_Model: {fileID: 5022602860645237092, guid: 7cb18060d71bb0a4e9f4c3d753a56888, type: 3}
   m_InferenceDevice: 0
-  m_BehaviorType: 0
+  m_BehaviorType: 2
   m_BehaviorName: SimplePlayerBehaviour
   TeamId: 0
   m_UseChildSensors: 1

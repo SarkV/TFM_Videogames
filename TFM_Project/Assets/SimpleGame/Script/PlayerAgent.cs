@@ -50,9 +50,10 @@ public class PlayerAgent : Agent
 
     public override void OnActionReceived(float[] vectorAction)
     {
-
-        if (_currentAction == Action.RUN)
+        bool rewarded = true;
+        if (_currentAction == Action.RUN && vectorAction[0] != 0)
         {
+            rewarded = false;
             if (vectorAction[0] == 1)
             {
                 // Move Left
@@ -102,7 +103,23 @@ public class PlayerAgent : Agent
             AddReward(-.5f);
         }
 
-        AddReward(_area.obstacleAvoided(_currentAction, _position + 1));
+        if (!rewarded)
+        {
+            float reward = _area.obstacleAvoided(_currentAction, _position + 1);
+            if (reward == 0 && vectorAction[0] != 0)
+            {
+                AddReward(-.1f);
+            }
+            else if (reward != 0)
+            {
+                AddReward(reward);
+            }
+            else if (reward == 0 && vectorAction[0] == 0)
+            {
+                AddReward(.1f);
+            }
+        }
+        
     }
 
     public override void Heuristic(float[] actionsOut)
@@ -132,7 +149,7 @@ public class PlayerAgent : Agent
             actionsOut[0] = 0f;
         }
     }
-
+    
     public override void CollectObservations(VectorSensor sensor)
     {
         float[,] obstacles = _area.getNearerObstacles();
