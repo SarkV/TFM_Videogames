@@ -1,0 +1,1781 @@
+fileFormatVersion: 2
+guid: 6ae389a3a6cadd44396334736034cae3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -203143979690389348
+    second: spoke_0
+  - first:
+      213: -8841734877900360368
+    second: spoke_1
+  - first:
+      213: 8060549872648589903
+    second: spoke_2
+  - first:
+      213: 4596280800316677290
+    second: spoke_3
+  - first:
+      213: -2175499628789766905
+    second: spoke_4
+  - first:
+      213: -5345183648066981032
+    second: spoke_5
+  - first:
+      213: -4176400130253387730
+    second: spoke_6
+  - first:
+      213: -7091818047509558434
+    second: spoke_7
+  - first:
+      213: -5941585153154561232
+    second: spoke_8
+  - first:
+      213: 8186691643969789069
+    second: spoke_9
+  - first:
+      213: -670327087686969432
+    second: spoke_10
+  - first:
+      213: -7276791663752286200
+    second: spoke_11
+  - first:
+      213: -5506284536000376488
+    second: spoke_12
+  - first:
+      213: -6021887260013858369
+    second: spoke_13
+  - first:
+      213: -2229392074794020832
+    second: spoke_14
+  - first:
+      213: -5978802550313114190
+    second: spoke_15
+  - first:
+      213: 585584905420657360
+    second: spoke_16
+  - first:
+      213: -2233171063092985096
+    second: spoke_17
+  - first:
+      213: 8621465571676184109
+    second: spoke_18
+  - first:
+      213: -5171081541026234696
+    second: spoke_19
+  - first:
+      213: 3351180810065328183
+    second: spoke_20
+  - first:
+      213: -6115694956639400245
+    second: spoke_21
+  - first:
+      213: -3832602728712206023
+    second: spoke_22
+  - first:
+      213: -810141482182075577
+    second: spoke_23
+  - first:
+      213: 90876871078981178
+    second: spoke_24
+  - first:
+      213: -1852299956819250006
+    second: spoke_25
+  - first:
+      213: -5495834384219355195
+    second: spoke_26
+  - first:
+      213: 6834979861169827671
+    second: spoke_27
+  - first:
+      213: 8856457305308692705
+    second: spoke_28
+  - first:
+      213: -8522887533233902936
+    second: spoke_29
+  - first:
+      213: 2753636889681069397
+    second: spoke_30
+  - first:
+      213: -8993937498602757791
+    second: spoke_31
+  - first:
+      213: -4488296313208198051
+    second: spoke_32
+  - first:
+      213: -811992378968464110
+    second: spoke_33
+  - first:
+      213: 7985818569618705282
+    second: spoke_34
+  - first:
+      213: 9081523159161009590
+    second: spoke_35
+  - first:
+      213: 8360862554887457508
+    second: spoke_36
+  - first:
+      213: 4639605118435555295
+    second: spoke_37
+  - first:
+      213: 4261643130656905160
+    second: spoke_38
+  - first:
+      213: 303374239938304535
+    second: spoke_39
+  - first:
+      213: 2312401748288751624
+    second: spoke_40
+  - first:
+      213: -1135769849379774151
+    second: spoke_41
+  - first:
+      213: 5349500500150297076
+    second: spoke_42
+  - first:
+      213: -7936296659596235639
+    second: spoke_43
+  - first:
+      213: -4521153614345921381
+    second: spoke_44
+  - first:
+      213: 851638795936986983
+    second: spoke_45
+  - first:
+      213: -5546383995050962206
+    second: spoke_46
+  - first:
+      213: 3264370003618828570
+    second: spoke_47
+  - first:
+      213: 5340588223767025583
+    second: spoke_48
+  - first:
+      213: -5578975395996275357
+    second: spoke_49
+  - first:
+      213: -3491395258371301209
+    second: spoke_50
+  - first:
+      213: 6553798451352468585
+    second: spoke_51
+  - first:
+      213: 2999331189639112533
+    second: spoke_52
+  - first:
+      213: -6244647496953399807
+    second: spoke_53
+  - first:
+      213: 3749735528097304753
+    second: spoke_54
+  - first:
+      213: -7717982292628329292
+    second: spoke_55
+  - first:
+      213: -7600548547688926075
+    second: spoke_56
+  - first:
+      213: 3126664894303925190
+    second: spoke_57
+  - first:
+      213: 3881004723141551431
+    second: spoke_58
+  - first:
+      213: -7094444604233454038
+    second: spoke_59
+  - first:
+      213: 7364905272463523977
+    second: spoke_60
+  - first:
+      213: -8922862904762702223
+    second: spoke_61
+  - first:
+      213: 8130577955060987793
+    second: spoke_62
+  - first:
+      213: -6183162566170935728
+    second: spoke_63
+  - first:
+      213: 6385100532879397460
+    second: spoke_1
+  - first:
+      213: -1271240061969461942
+    second: spoke_2
+  - first:
+      213: 2702286189939310607
+    second: spoke_0
+  - first:
+      213: -3247429471739793327
+    second: spoke_32
+  - first:
+      213: -4683253233649651523
+    second: spoke_33
+  - first:
+      213: 4099147719312889719
+    second: spoke_34
+  - first:
+      213: 6044775885374846831
+    second: spoke_35
+  - first:
+      213: -1922653670735786698
+    second: spoke_36
+  - first:
+      213: -7899977364956524018
+    second: spoke_37
+  - first:
+      213: -1480476949666831287
+    second: spoke_38
+  - first:
+      213: 1540286760521603132
+    second: spoke_39
+  - first:
+      213: 1783675328630379216
+    second: spoke_40
+  - first:
+      213: -1653073593886844277
+    second: spoke_41
+  - first:
+      213: -8117499572069565199
+    second: spoke_42
+  - first:
+      213: 1018253757085588860
+    second: spoke_43
+  - first:
+      213: -436967036341787840
+    second: spoke_44
+  - first:
+      213: -3192848650981541069
+    second: spoke_45
+  - first:
+      213: 8410107112354414123
+    second: spoke_46
+  - first:
+      213: -5886357851600459231
+    second: spoke_47
+  - first:
+      213: -554998314927702347
+    second: spoke_48
+  - first:
+      213: 3370395249780488619
+    second: spoke_49
+  - first:
+      213: 4230965389988874212
+    second: spoke_50
+  - first:
+      213: -4682404517724171536
+    second: spoke_51
+  - first:
+      213: -357190212508284129
+    second: spoke_52
+  - first:
+      213: -6796498790254017763
+    second: spoke_53
+  - first:
+      213: 5405188070681249437
+    second: spoke_54
+  - first:
+      213: 5611069577923756170
+    second: spoke_55
+  - first:
+      213: -5612115418279884926
+    second: spoke_56
+  - first:
+      213: -6138182144894646751
+    second: spoke_57
+  - first:
+      213: 735572416359449588
+    second: spoke_58
+  - first:
+      213: -8627943152555450276
+    second: spoke_59
+  - first:
+      213: -6230160771994237109
+    second: spoke_60
+  - first:
+      213: 8419752555434476886
+    second: spoke_61
+  - first:
+      213: -8546131037731505709
+    second: spoke_62
+  - first:
+      213: 2463757448161523287
+    second: spoke_63
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spoke_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 7718
+        width: 360
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f00c6c0f8f2708520800000000000000
+      internalID: 2702286189939310607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_1
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 7718
+        width: 360
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055319c59f8db4580800000000000000
+      internalID: -8841734877900360368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_2
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 7718
+        width: 360
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f421a8d0763dcdf60800000000000000
+      internalID: 8060549872648589903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_3
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 7718
+        width: 360
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aacd2d6290549cf30800000000000000
+      internalID: 4596280800316677290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 7206
+        width: 360
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705edf82d921fc1e0800000000000000
+      internalID: -2175499628789766905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_5
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 7206
+        width: 360
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853bdb5cac712d5b0800000000000000
+      internalID: -5345183648066981032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_6
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 7206
+        width: 360
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e280a5485327a06c0800000000000000
+      internalID: -4176400130253387730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_7
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 7206
+        width: 360
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b0d725f0dc49d90800000000000000
+      internalID: -7091818047509558434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_8
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 6694
+        width: 360
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03bcc7778cf3b8da0800000000000000
+      internalID: -5941585153154561232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_9
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 6694
+        width: 360
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c5a7cdca8fc9170800000000000000
+      internalID: 8186691643969789069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_10
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 6694
+        width: 388
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a79817b01582b6f0800000000000000
+      internalID: -670327087686969432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_11
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 6694
+        width: 392
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80075813984a30b90800000000000000
+      internalID: -7276791663752286200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_12
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 6182
+        width: 360
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8519877536fb593b0800000000000000
+      internalID: -5506284536000376488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_13
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 6182
+        width: 360
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb17c6d3175fd6ca0800000000000000
+      internalID: -6021887260013858369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_14
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 6182
+        width: 360
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020d4d448bb9f01e0800000000000000
+      internalID: -2229392074794020832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_15
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 6150
+        width: 364
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b5236ee1c6070da0800000000000000
+      internalID: -5978802550313114190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_16
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 5670
+        width: 360
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2dd617e5a602800800000000000000
+      internalID: 585584905420657360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_17
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 5670
+        width: 360
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f249adffbe2201e0800000000000000
+      internalID: -2233171063092985096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_18
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 5670
+        width: 360
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ed40b424995a770800000000000000
+      internalID: 8621465571676184109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_19
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 5670
+        width: 360
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be3d8a6cb0ac38b0800000000000000
+      internalID: -5171081541026234696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_20
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 5158
+        width: 360
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738bc020139c18e20800000000000000
+      internalID: 3351180810065328183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_21
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 5158
+        width: 360
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce4cdad6dfa02ba0800000000000000
+      internalID: -6115694956639400245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_22
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 5158
+        width: 360
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9398aedcf1cdfcac0800000000000000
+      internalID: -3832602728712206023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_23
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 5158
+        width: 360
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b9ab04d9cc1c4f0800000000000000
+      internalID: -810141482182075577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_24
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 4646
+        width: 360
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e26f2680cd24100800000000000000
+      internalID: 90876871078981178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_25
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 4646
+        width: 360
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa43150d00f4b46e0800000000000000
+      internalID: -1852299956819250006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_26
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 4646
+        width: 388
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c74a38eebfdab3b0800000000000000
+      internalID: -5495834384219355195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_27
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 4646
+        width: 392
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75fe9ff68f9bade50800000000000000
+      internalID: 6834979861169827671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_28
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 4134
+        width: 360
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e08653eef478ea70800000000000000
+      internalID: 8856457305308692705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_29
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 4134
+        width: 360
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aaecf8d1fe98b980800000000000000
+      internalID: -8522887533233902936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_30
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 4134
+        width: 360
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5550ad96922e63620800000000000000
+      internalID: 2753636889681069397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_31
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 4102
+        width: 364
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161a7b73f7d1f2380800000000000000
+      internalID: -8993937498602757791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_32
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 3622
+        width: 396
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150b0dfd910dee2d0800000000000000
+      internalID: -3247429471739793327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_33
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 3622
+        width: 396
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0fc173ffdb10fb0800000000000000
+      internalID: -4683253233649651523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_34
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 3622
+        width: 396
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7775f7be12913e830800000000000000
+      internalID: 4099147719312889719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_35
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 3622
+        width: 396
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f677d9224ab53e350800000000000000
+      internalID: 6044775885374846831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_36
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 3110
+        width: 396
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d41b15cac5155e0800000000000000
+      internalID: -1922653670735786698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_37
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 3110
+        width: 396
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02d3244174ad5290800000000000000
+      internalID: -7899977364956524018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_38
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 3110
+        width: 396
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94464f4ee0a447be0800000000000000
+      internalID: -1480476949666831287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_39
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 3110
+        width: 396
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38902dd5a2306510800000000000000
+      internalID: 1540286760521603132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_40
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 2578
+        width: 360
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d254a5d243e0c810800000000000000
+      internalID: 1783675328630379216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_41
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 2578
+        width: 384
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8adbc0235a1f09e0800000000000000
+      internalID: -1653073593886844277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_42
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 2574
+        width: 444
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc7866c529d85f80800000000000000
+      internalID: -8117499572069565199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_43
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 2590
+        width: 428
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d1b4aa560912e00800000000000000
+      internalID: 1018253757085588860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_44
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 2086
+        width: 360
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043ea4cabc49fe9f0800000000000000
+      internalID: -436967036341787840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_45
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 2086
+        width: 416
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33bf8a08119b0b3d0800000000000000
+      internalID: -3192848650981541069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_46
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 2086
+        width: 412
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2efeda2cd3b6b470800000000000000
+      internalID: 8410107112354414123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_47
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 2070
+        width: 424
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ae582a8b47f4ea0800000000000000
+      internalID: -5886357851600459231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_48
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1574
+        width: 396
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be3bcb19ff3c48f0800000000000000
+      internalID: -554998314927702347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_49
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1574
+        width: 396
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba974df5f9c06ce20800000000000000
+      internalID: 3370395249780488619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_50
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1574
+        width: 396
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e742470b9867ba30800000000000000
+      internalID: 4230965389988874212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_51
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 1574
+        width: 396
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2dd5a46e1c40fb0800000000000000
+      internalID: -4682404517724171536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_52
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1062
+        width: 396
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b823ae4610b0bf0800000000000000
+      internalID: -357190212508284129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_53
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1062
+        width: 396
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1389821c5cfda1a0800000000000000
+      internalID: -6796498790254017763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_54
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1062
+        width: 396
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96822199e5130b40800000000000000
+      internalID: 5405188070681249437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_55
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 1062
+        width: 396
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a80852a6d068edd40800000000000000
+      internalID: 5611069577923756170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_56
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 530
+        width: 360
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2874fe6e2c2cd12b0800000000000000
+      internalID: -5612115418279884926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_57
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 530
+        width: 384
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126c8e65cdbc0daa0800000000000000
+      internalID: -6138182144894646751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_58
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 526
+        width: 444
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f34ea72737453a00800000000000000
+      internalID: 735572416359449588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_59
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 542
+        width: 428
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c502ba16a63634880800000000000000
+      internalID: -8627943152555450276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_60
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 38
+        width: 360
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47c5b369c50a89a0800000000000000
+      internalID: -6230160771994237109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_61
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 38
+        width: 416
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6550c53e658f8d470800000000000000
+      internalID: 8419752555434476886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_62
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 38
+        width: 412
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d9b21cb91b066980800000000000000
+      internalID: -8546131037731505709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spoke_63
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 22
+        width: 424
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756f3667856013220800000000000000
+      internalID: 2463757448161523287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5cfd3f1a78ffb704ca260a3e64dca90a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,6 +10,8 @@ TagManager:
   - nonDodgeObstacle
   - area
   - flyingObstacle
+  - path
+  - manaPanel
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 9d4fa0253f5211247ba7e803481f0cfb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _area: {instanceID: 0}
+  - _scissorIcon: {fileID: 21300000, guid: 60adc59da9cf9d44086e03bbc8a20787, type: 3}
+  - _rockIcon: {fileID: 21300000, guid: 2cabdcc06579c2a4ab080b7981acd8d0, type: 3}
+  - _paperIcon: {fileID: 21300000, guid: a3301f4cb226128439b9bb83a9a793ce, type: 3}
+  - _lizardIcon: {fileID: 21300000, guid: d328b1e1a1386914c9c8f229908d76a0, type: 3}
+  - _spokeIcon: {fileID: 21300000, guid: d3e8f99cd8b18ae4994a1ca1bb7c58f9, type: 3}
+  - _buttonsMenu: {instanceID: 0}
+  - _respawnZone: {instanceID: 0}
+  - _manaGO: {instanceID: 0}
+  - _directionArrow: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
