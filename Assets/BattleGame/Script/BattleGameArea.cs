@@ -76,7 +76,7 @@ public class BattleGameArea : MonoBehaviour
             if(go != null)
                 Destroy(go);
         }
-        foreach (GameObject go in _playerUnits)
+        foreach (GameObject go in _enemyUnits)
         {
             if (go != null)
                 Destroy(go);
@@ -141,9 +141,16 @@ public class BattleGameArea : MonoBehaviour
                 }
                 break;
         }
-
-        _enemy.GetComponent<BattleGameAgent>().unitKilled(agent == AgentType.ENEMY);
-        _player.GetComponent<BattleGameAgent>().unitKilled(agent == AgentType.PLAYER);
+        if(agent == AgentType.ENEMY)
+        {
+            _enemy.GetComponent<BattleGameAgent>().AddReward(.3f);
+            _player.GetComponent<BattleGameAgent>().AddReward(-.1f);
+        }
+        else
+        {
+            _player.GetComponent<BattleGameAgent>().AddReward(.3f);
+            _enemy.GetComponent<BattleGameAgent>().AddReward(-.1f);
+        }
 
     }
 
@@ -155,17 +162,27 @@ public class BattleGameArea : MonoBehaviour
             _playerLifes--;
             setLife(_playerLifes, _playerLifesGO);
             end = _playerLifes <= 0;
+            _enemy.GetComponent<BattleGameAgent>().AddReward(.7f);
+            _player.GetComponent<BattleGameAgent>().AddReward(-.6f);
         }
         else
         {
             _enemyLifes--;
             setLife(_enemyLifes, _enemyLifesGO);
             end = _enemyLifes <= 0;
+            _enemy.GetComponent<BattleGameAgent>().AddReward(-.6f);
+            _player.GetComponent<BattleGameAgent>().AddReward(.7f);
         }
-        _enemy.GetComponent<BattleGameAgent>().hitted(agent == AgentType.ENEMY, end);
-        _player.GetComponent<BattleGameAgent>().hitted(agent == AgentType.PLAYER, end);
         if (end)
         {
+            bool isPlayer = _playerLifes <= 0;
+            
+            _enemy.GetComponent<BattleGameAgent>().AddReward(isPlayer ? 1 : -1);
+            _player.GetComponent<BattleGameAgent>().AddReward(isPlayer ? -1 : 1);
+
+            _enemy.GetComponent<BattleGameAgent>().EndEpisode();
+            _player.GetComponent<BattleGameAgent>().EndEpisode();
+
             Restart();
         }
     }
@@ -187,6 +204,7 @@ public class BattleGameArea : MonoBehaviour
 
     public void AddMonster(AgentType agent, GameObject monster)
     {
+        monster.transform.parent = this.gameObject.transform;
         switch (agent)
         {
             case AgentType.ENEMY:
@@ -212,12 +230,12 @@ public class BattleGameArea : MonoBehaviour
         }
     }
 
-    public float[,] getUnits(AgentType agent)
+    public float[,] getUnits(AgentType agent, Vector3 respawnPos)
     {
         float[,] res = new float[MAX_NUM_UNITS, 3];
         for (int i = 0; i < MAX_NUM_UNITS; i++)
         {
-            res[i, 0] = -1;
+            res[i, 0] = 0;
             res[i, 1] = 0;
             res[i, 2] = 0;
         }
@@ -229,8 +247,8 @@ public class BattleGameArea : MonoBehaviour
                     if (_enemyUnits[i] != null)
                     {
                         res[i, 0] = (float)_enemyUnits[i].GetComponent<UnitBehaviour>()._type;
-                        res[i, 0] = _enemyUnits[i].transform.localPosition.x;
-                        res[i, 0] = _enemyUnits[i].transform.localPosition.z;
+                        res[i, 1] = Mathf.Abs(respawnPos.x - _enemyUnits[i].transform.localPosition.x);
+                        res[i, 2] = _enemyUnits[i].transform.localPosition.z;
                     }
                 }
                 break;
@@ -240,8 +258,8 @@ public class BattleGameArea : MonoBehaviour
                     if(_playerUnits[i] != null)
                     {
                         res[i, 0] = (float)_playerUnits[i].GetComponent<UnitBehaviour>()._type;
-                        res[i, 0] = _playerUnits[i].transform.localPosition.x;
-                        res[i, 0] = _playerUnits[i].transform.localPosition.z;
+                        res[i, 1] = Mathf.Abs(respawnPos.x - _playerUnits[i].transform.localPosition.x);
+                        res[i, 2] = _playerUnits[i].transform.localPosition.z;
                     }
                 }
                 break;

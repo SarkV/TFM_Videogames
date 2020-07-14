@@ -40,11 +40,13 @@ public class BattleGameAgent : Agent
     public GameObject _manaGO;
     public GameObject _directionArrow;
 
+    public float lastChanged = 0;
 
     public override void Initialize()
     {
         base.Initialize();
         _battleGameArea = _area.GetComponent<BattleGameArea>();
+        Reset();
     }
 
     public override void OnEpisodeBegin()
@@ -114,12 +116,20 @@ public class BattleGameAgent : Agent
             }
             else
             {
-                AddReward(-.05f);
+                AddReward(-.005f);
             }
         }
         else if(action == 3)
         {
-            rotateDirection();
+           // if (lastChanged == 0 || Time.time - lastChanged >= .5f)
+           // {
+                rotateDirection();
+                lastChanged = Time.time;
+           /* }
+            else
+            {
+                AddReward(-.005f);
+            }*/
         }
     }
 
@@ -131,7 +141,7 @@ public class BattleGameAgent : Agent
         // current cards + cards mana (18 observations)
         for (int i = 0; i < _monstersAvailable.Length; i++) 
         {
-            sensor.AddOneHotObservation((int) _monstersAvailable[i], 5);
+            sensor.AddOneHotObservation(((int) _monstersAvailable[i]), 5);
             sensor.AddObservation(_monstersSTS[_monstersAvailable[i]].Value);
         }
 
@@ -152,14 +162,14 @@ public class BattleGameAgent : Agent
         sensor.AddObservation(_battleGameArea.getOppositeArrowsDirection(_type));
 
         // Get Units (40 units * (2 x, z + (1 type * 5 posibilities))) = 280)
-        float[,] units = _battleGameArea.getUnits(_type);
+        float[,] units = _battleGameArea.getUnits(_type, transform.localPosition);
         for (int i = 0; i < _battleGameArea.MAX_NUM_UNITS; i++)
         {
             sensor.AddOneHotObservation((int)units[i, 0], 5);
             sensor.AddObservation(units[i, 1]);
             sensor.AddObservation(units[i, 2]);
         }
-        units = _battleGameArea.getUnits(_type == AgentType.PLAYER ? AgentType.ENEMY : AgentType.PLAYER);
+        units = _battleGameArea.getUnits(_type == AgentType.PLAYER ? AgentType.ENEMY : AgentType.PLAYER, transform.localPosition);
         for (int i = 0; i < _battleGameArea.MAX_NUM_UNITS; i++)
         {
             sensor.AddOneHotObservation((int)units[i, 0], 5);
@@ -187,10 +197,7 @@ public class BattleGameAgent : Agent
         setMana(_mana - _monstersSTS[_monstersAvailable[pos]].Value);
         for (int i = 0; i < _monstersAvailable.Length; i++)
         {
-            if (i != pos)
-            {
-                values.Remove((int)_monstersAvailable[i]);
-            }
+            values.Remove((int)_monstersAvailable[i]);
         }
         setMonsterCard(pos, (Monster)values[Random.Range(0, values.Count)]);
     }
@@ -271,20 +278,5 @@ public class BattleGameAgent : Agent
     {
         if(_mana < _manaMax)
             setMana(_mana + 1);
-    }
-
-    public void hitted(bool own, bool end)
-    {
-        AddReward((own ? 1 : -1) * .5f);
-        if (end)
-        {
-            AddReward((own ? 1 : -1) * 1f);
-            EndEpisode();
-        }
-    }
-
-    public void unitKilled(bool own)
-    {
-        AddReward((own ? -1 : 1) * .2f);
     }
 }

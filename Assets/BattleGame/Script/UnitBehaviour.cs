@@ -101,7 +101,7 @@ public class UnitBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_currentPath != null)
+        if (_currentPath != null && !_animator.GetBool("isDead"))
         {
             Vector3 currentPathPos = _currentPath[_nextPath].transform.position;
             if (_nextPath == _currentPath.Length - 1)
@@ -146,7 +146,7 @@ public class UnitBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.GetComponent<UnitBehaviour>()._owner != this._owner && !collision.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("Dead"))
+        if (collision.gameObject.GetComponent<UnitBehaviour>()._owner != this._owner && !_animator.GetBool("isDead"))
         {
             if (_beatEnemies[0].Equals(collision.gameObject.name) || _beatEnemies[1].Equals(collision.gameObject.name))
             {
@@ -154,7 +154,14 @@ public class UnitBehaviour : MonoBehaviour
             }
             else
             {
-                _animator.SetBool("isDead", true);
+                if (!collision.gameObject.GetComponent<Animator>().GetBool("isDead"))
+                {
+                    _animator.SetBool("isDead", true);
+                    if (this.gameObject.name.Equals(collision.gameObject.name)) 
+                    { 
+                        collision.GetComponent<Animator>().SetBool("isDead", true);
+                    }
+                }
             }
         }
     }

@@ -1264,6 +1264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUB
       objectReference: {fileID: 0}
+    - target: {fileID: 1965757314397832, guid: f67dfb735aa70824dbb34723c4cb3abf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224963021206117000, guid: f67dfb735aa70824dbb34723c4cb3abf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1431,11 +1435,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4190137938730977754}
     m_Modifications:
-    - target: {fileID: -4665310757603506550, guid: c74102ee9db0b79499f1eb9616923901,
-        type: 3}
-      propertyPath: m_BehaviorName
-      value: BattleGame
-      objectReference: {fileID: 0}
     - target: {fileID: 957514172893494936, guid: c74102ee9db0b79499f1eb9616923901,
         type: 3}
       propertyPath: _area
@@ -1511,6 +1510,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftBattleGameAgent
       objectReference: {fileID: 0}
+    - target: {fileID: 6476487957760101999, guid: c74102ee9db0b79499f1eb9616923901,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c74102ee9db0b79499f1eb9616923901, type: 3}
 --- !u!1 &363476153690231586 stripped
@@ -1536,6 +1540,16 @@ PrefabInstance:
         type: 3}
       propertyPath: TeamId
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4665310757603506550, guid: c74102ee9db0b79499f1eb9616923901,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4665310757603506550, guid: c74102ee9db0b79499f1eb9616923901,
+        type: 3}
+      propertyPath: m_Model
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 957514172893494936, guid: c74102ee9db0b79499f1eb9616923901,
         type: 3}
@@ -1616,6 +1630,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RightBattleGameAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476487957760101999, guid: c74102ee9db0b79499f1eb9616923901,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c74102ee9db0b79499f1eb9616923901, type: 3}
