@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public enum Obstacles
 {
@@ -290,5 +291,10 @@ public class SimpleGameArea : MonoBehaviour
             result = 1;
         }
         return result;
+    }
+
+    public void OnGoBack()
+    {
+        SceneManager.LoadScene(0);
     }
 }

@@ -45,7 +45,8 @@ public class PlayerAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        _area.Restart();
+        if(_area != null)
+            _area.Restart();
     }
 
     public override void OnActionReceived(float[] vectorAction)

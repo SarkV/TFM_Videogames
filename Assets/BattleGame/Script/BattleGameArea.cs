@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum AgentType{PLAYER,ENEMY};
 public class BattleGameArea : MonoBehaviour
@@ -19,6 +20,8 @@ public class BattleGameArea : MonoBehaviour
 
     public GameObject[] _playerUnits;
     public GameObject[] _enemyUnits;
+
+    public GameObject _menu;
 
     // Start is called before the first frame update
     void Start()
@@ -64,16 +67,11 @@ public class BattleGameArea : MonoBehaviour
         }
     }
 
-    void Restart()
+    public void RemoveUnits()
     {
-        _playerLifes = 3;
-        _enemyLifes = 3;
-        setLife(_playerLifes, _playerLifesGO);
-        setLife(_enemyLifes, _enemyLifesGO);
-
         foreach (GameObject go in _playerUnits)
         {
-            if(go != null)
+            if (go != null)
                 Destroy(go);
         }
         foreach (GameObject go in _enemyUnits)
@@ -83,6 +81,21 @@ public class BattleGameArea : MonoBehaviour
         }
         _playerUnits = new GameObject[MAX_NUM_UNITS];
         _enemyUnits = new GameObject[MAX_NUM_UNITS];
+
+    }
+
+    public void Restart()
+    {
+        _menu.SetActive(false);
+        _enemy.GetComponent<BattleGameAgent>().Reset();
+        _player.GetComponent<BattleGameAgent>().Reset();
+
+        _playerLifes = 3;
+        _enemyLifes = 3;
+        setLife(_playerLifes, _playerLifesGO);
+        setLife(_enemyLifes, _enemyLifesGO);
+
+        RemoveUnits();
     }
 
     public void unitKilled(AgentType agent, GameObject monster)
@@ -180,10 +193,11 @@ public class BattleGameArea : MonoBehaviour
             _enemy.GetComponent<BattleGameAgent>().AddReward(isPlayer ? 1 : -1);
             _player.GetComponent<BattleGameAgent>().AddReward(isPlayer ? -1 : 1);
 
-            _enemy.GetComponent<BattleGameAgent>().EndEpisode();
-            _player.GetComponent<BattleGameAgent>().EndEpisode();
+            _enemy.GetComponent<BattleGameAgent>().End();
+            _player.GetComponent<BattleGameAgent>().End();
 
-            Restart();
+            RemoveUnits();
+            _menu.SetActive(true);
         }
     }
 
@@ -265,5 +279,11 @@ public class BattleGameArea : MonoBehaviour
                 break;
         }
         return res;
+    }
+
+    public void OnGoBack()
+    {
+        Restart();
+        SceneManager.LoadScene(0);
     }
 }

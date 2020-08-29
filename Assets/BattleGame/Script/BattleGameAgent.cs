@@ -18,6 +18,7 @@ public class BattleGameAgent : Agent
     };
 
     int _mana = 0;
+    bool _stop = false;
 
     public AgentType _type;
     public GameObject _area;
@@ -107,29 +108,33 @@ public class BattleGameAgent : Agent
 
     public override void OnActionReceived(float[] vectorAction)
     {
-        int action = (int)vectorAction[0];
-        if (action < 3)
+        if (!_stop)
         {
-            if (_monstersSTS[_monstersAvailable[action]].Value <= _mana)
+            int action = (int)vectorAction[0];
+            if (action < 3)
             {
-                clickCard(action);
+                if (_monstersSTS[_monstersAvailable[action]].Value <= _mana)
+                {
+                    clickCard(action);
+                }
+                else
+                {
+                    AddReward(-.005f);
+                }
             }
-            else
+            else if (action == 3)
             {
-                AddReward(-.005f);
-            }
-        }
-        else if(action == 3)
-        {
-           // if (lastChanged == 0 || Time.time - lastChanged >= .5f)
-           // {
+                // if (lastChanged == 0 || Time.time - lastChanged >= .5f)
+                // {
                 rotateDirection();
                 lastChanged = Time.time;
-           /* }
-            else
-            {
-                AddReward(-.005f);
-            }*/
+                /* }
+                 else
+                 {
+                     AddReward(-.005f);
+                 }*/
+            }
+
         }
     }
 
@@ -182,24 +187,28 @@ public class BattleGameAgent : Agent
 
     public void rotateDirection()
     {
-        _directionArrow.transform.Rotate(0.0f, 0.0f, 180.0f, Space.Self);
+        if(!_stop)
+            _directionArrow.transform.Rotate(0.0f, 0.0f, 180.0f, Space.Self);
     }
 
     public void clickCard(int pos)
     {
-        List<int> values = new List<int>() { 0, 1, 2, 3, 4 };
-        GameObject gm = Instantiate(_monstersGO[(int)_monstersAvailable[pos]], Vector3.zero, Quaternion.identity);
-        gm.name = _monstersSTS[_monstersAvailable[pos]].Key;
-        gm.GetComponent<UnitBehaviour>().setDirection(_area, _directionArrow, _type);
-
-        _battleGameArea.AddMonster(_type, gm);
-
-        setMana(_mana - _monstersSTS[_monstersAvailable[pos]].Value);
-        for (int i = 0; i < _monstersAvailable.Length; i++)
+        if (!_stop)
         {
-            values.Remove((int)_monstersAvailable[i]);
+            List<int> values = new List<int>() { 0, 1, 2, 3, 4 };
+            GameObject gm = Instantiate(_monstersGO[(int)_monstersAvailable[pos]], Vector3.zero, Quaternion.identity);
+            gm.name = _monstersSTS[_monstersAvailable[pos]].Key;
+            gm.GetComponent<UnitBehaviour>().setDirection(_area, _directionArrow, _type);
+
+            _battleGameArea.AddMonster(_type, gm);
+
+            setMana(_mana - _monstersSTS[_monstersAvailable[pos]].Value);
+            for (int i = 0; i < _monstersAvailable.Length; i++)
+            {
+                values.Remove((int)_monstersAvailable[i]);
+            }
+            setMonsterCard(pos, (Monster)values[Random.Range(0, values.Count)]);
         }
-        setMonsterCard(pos, (Monster)values[Random.Range(0, values.Count)]);
     }
 
     void setMonsterCard(int pos, Monster value)
@@ -271,12 +280,19 @@ public class BattleGameAgent : Agent
         setMonsterCard(2, (Monster)values[index]);
 
         setMana(_manaMax / 2);
+        _stop = false;
         InvokeRepeating("addMana", 2, 2);
     }
 
     void addMana()
     {
-        if(_mana < _manaMax)
+        if(_mana < _manaMax && !_stop)
             setMana(_mana + 1);
+    }
+
+    public void End()
+    {
+        EndEpisode();
+        _stop = true;
     }
 }

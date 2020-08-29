@@ -95,6 +95,7 @@ MonoBehaviour:
   _respawnZone: {fileID: 0}
   _manaGO: {fileID: 4456099782229327512}
   _directionArrow: {fileID: 0}
+  lastChanged: 0
 --- !u!114 &7102659109878033583
 MonoBehaviour:
   m_ObjectHideFlags: 0
